@@ -8,7 +8,7 @@ var container = document.getElementById('container');
 // }
 
 // Latin IIFE Start
-var Latin = (function() {
+var Translator = (function() {
 	// // Array that will hold the separate words of the user-submitted string
 	// var separated = [];	
 	// button.addEventListener("click", function(){
@@ -45,6 +45,7 @@ var Latin = (function() {
 			// 		separated[i] = lexicon[separated[i]];
 			// 	}
 			// }
+
 			// forEach variation of the above For loop
 
 			// separated.forEach(function(element){
@@ -69,6 +70,11 @@ var Latin = (function() {
 			// var translatedOutput = textArr.join(" ");
 
 			container.innerHTML = `<p>Latin Translation:</p><p>${translatedOutput}</p>`;
+			var synth = window.speechSynthesis;
+			var utterThis = new SpeechSynthesisUtterance(translatedOutput);
+			// utterThis.lang = 'en-US';
+			utterThis.lang = 'ar';
+			synth.speak(utterThis);
 			return translatedOutput; // Console log return
 
 		}
