@@ -19,7 +19,7 @@ var Latin = (function() {
 		separated = text.toLowerCase().split(" ");
 		console.log("separated: ", separated);
 	});
-
+	
 	var lexicon = {
 		"merry": "epulari",
 		"christmas": "festum nativitatis Christi",
