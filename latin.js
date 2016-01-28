@@ -8,6 +8,8 @@ var container = document.getElementById('container');
 // }
 
 // Latin IIFE Start
+	
+
 var Translator = (function() {
 	// // Array that will hold the separate words of the user-submitted string
 	// var separated = [];	
@@ -19,6 +21,7 @@ var Translator = (function() {
 	// 	separated = text.toLowerCase().split(" ");
 	// 	console.log("separated: ", separated);
 	// });
+
 
 	var lexicon = {
 		"merry": "epulari",
