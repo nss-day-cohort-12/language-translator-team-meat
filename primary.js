@@ -6,9 +6,7 @@ var norwegian= document.getElementById("norwegian");
 
 
 // var userInput= document.getElementById("input");
-console.log("port", port);
-console.log("latin", latin);
-console.log("norwegian", norwegian);
+
 
 var translation = (function() {
 	var words = ["Merry", "Christmas", "and", "Happy", "New", "Year"];

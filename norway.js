@@ -11,18 +11,26 @@ var language = (function() {
 				 "new":"ny", 
 				 "year":"år"}
 
+	return {
+		getWords: function() {
+			return words;
+		},
+		// setWords: function(translatedWords) {
+		// return 	
+
+		// },
+	}
+
 console.log(words.Merry, "merry");
 console.log(words.Christmas, "Christmas");
 
 	var translated = [];
-	button.addEventListener("click", function())
+	
+	// button.addEventListener("click", function(){});	
 
 	return 	translated.setNor = function() {
 		 words = document.innerHTML(matrix);
 		}
-	// }
-
+	
 
 })();
-
-// translate.addEventListener("click", translateText)
