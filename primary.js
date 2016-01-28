@@ -35,6 +35,7 @@ button.addEventListener("click", function(){
 		// Latin.getLatin(separated); Example (takes separated array as argument)
 	} else if (norwegian.checked) {
 		console.log("norwegian checked");
+		language.translateNor(separated);
 	} else {
 		console.log("please check a button");
 	}

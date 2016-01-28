@@ -1,36 +1,50 @@
-var userInput= document.getElementById("input");
+
 var norwegian= document.getElementById("norwegian");
 var matrix= document.getElementById("matrix");
 var button = document.getElementById("translate");
 
-var language = (function() {
-	var words = {"Merry":"Munter",
-				 "Christmas":"Jul", 
+var language = (function(translatorParameter) {
+	var wordNor= {"merry":"munter",
+				 "christmas":"jul", 
 				 "and":"og", 
 				 "happy":"lykkelig", 
 				 "new":"ny", 
-				 "year":"år"}
+				 "year":"år"};	
 
 	return {
-		getWords: function() {
-			return words;
-		},
-		// setWords: function(translatedWords) {
-		// return 	
+		 
 
-		// },
+		translatorParameter.translateNor = function(word) {
+		var newArray = [];
+	// 	for (var i=0; i < words.length; i++) {
+	// 		if (words  !== undefined)
+	// 		translated.push(words); 	
+	
+		// }
+
+		for (var i = 0; i < word.length; i++) {
+			if (wordNor[word[i]] !== undefined) {
+
+				newArray.push(wordNor[word[i]]);
+				console.log("newArray", newArray);
+			}
+			var translated = newArray.join(" ");
+			console.log("translated", translated);
+
+		};
+			var synth = window.speechSynthesis;
+            var utterThis = new SpeechSynthesisUtterance(translated);
+            // utterThis.lang = 'en-US';
+            utterThis.lang = 'ar';
+            synth.speak(utterThis);
+
+		 matrix.innerHTML = translated;
 	}
 
-console.log(words.Merry, "merry");
-console.log(words.Christmas, "Christmas");
-
-	var translated = [];
-	
 	// button.addEventListener("click", function(){});	
 
-	return 	translated.setNor = function() {
-		 words = document.innerHTML(matrix);
-		}
-	
 
-})();
+	// 	}
+	
+};
+})(Translator);
