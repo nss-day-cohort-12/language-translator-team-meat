@@ -21,7 +21,7 @@ button.addEventListener("click", function(){
 	// Array that will hold the separate words of the user-submitted string
 	var separated = [];	
 	// store the user's input string into a variable
-	text = userInput.value;
+  text = userInput.value;
 	console.log("User Text: ", text);
 	// Declare a new array for the space-delimited strings of the initial user input, all set to lower case
 	separated = text.toLowerCase().split(" ");
@@ -32,6 +32,7 @@ button.addEventListener("click", function(){
 	// Add your function underneath the console log for your language
 	if (port.checked) {
 		console.log("port checked");
+		transPort.toTranslate(separated);
 	} else if (latin.checked) {
 		console.log("latin checked");
 		// Latin.getLatin(separated); Example (takes separated array as argument)
