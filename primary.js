@@ -16,6 +16,10 @@ console.log("norwegian", norwegian);
 // Translate Button
 var button = document.getElementById("translate");
 
+
+// var userInput= document.getElementById("input");
+
+
 // Event listener/hander for the translate button
 button.addEventListener("click", function(){
 	// Array that will hold the separate words of the user-submitted string
@@ -38,13 +42,8 @@ button.addEventListener("click", function(){
 		// Latin.getLatin(separated); Example (takes separated array as argument)
 	} else if (norwegian.checked) {
 		console.log("norwegian checked");
+		language.translateNor(separated);
 	} else {
 		console.log("please check a button");
 	}
 });
-
-
-
-
-
-
