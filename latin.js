@@ -8,17 +8,17 @@ var container = document.getElementById('container');
 // }
 
 // Latin IIFE Start
-var Latin = (function() {
-	// Array that will hold the separate words of the user-submitted string
-	var separated = [];	
-	button.addEventListener("click", function(){
-		// store the user's input string into a variable
-		text = userInput.value;
-		console.log("user text: ", text);
-		// Declare a new array for the space-delimited strings of the initial user input, all set to lower case
-		separated = text.toLowerCase().split(" ");
-		console.log("separated: ", separated);
-	});
+var Translator = (function() {
+	// // Array that will hold the separate words of the user-submitted string
+	// var separated = [];	
+	// button.addEventListener("click", function(){
+	// 	// store the user's input string into a variable
+	// 	text = userInput.value;
+	// 	console.log("user text: ", text);
+	// 	// Declare a new array for the space-delimited strings of the initial user input, all set to lower case
+	// 	separated = text.toLowerCase().split(" ");
+	// 	console.log("separated: ", separated);
+	// });
 
 	var lexicon = {
 		"merry": "epulari",
@@ -32,7 +32,7 @@ var Latin = (function() {
 
 	return {
 		// Publicly accessible translator function for global "text" input variable
-		getLatin: function() {
+		getLatin: function(textArr) {
 			// New array for pushing translated content into
 			var translatedArr = [];
 			console.log("getLatin test");
@@ -45,6 +45,7 @@ var Latin = (function() {
 			// 		separated[i] = lexicon[separated[i]];
 			// 	}
 			// }
+
 			// forEach variation of the above For loop
 
 			// separated.forEach(function(element){
@@ -55,7 +56,7 @@ var Latin = (function() {
 			// 	}
 			// });
 
-			var translatedOutput = separated.map(function(element){
+			var translatedOutput = textArr.map(function(element){
 				if (lexicon[element] !== undefined) {
 					console.log("element: ", element);
 					console.log("lexicon[element]: ", lexicon[element]);
@@ -66,9 +67,14 @@ var Latin = (function() {
 			console.log(translatedOutput);
 
 			// Declare translatedOutput for above for loop and forEach options (need join variable)
-			// var translatedOutput = separated.join(" ");
+			// var translatedOutput = textArr.join(" ");
 
 			container.innerHTML = `<p>Latin Translation:</p><p>${translatedOutput}</p>`;
+			var synth = window.speechSynthesis;
+			var utterThis = new SpeechSynthesisUtterance(translatedOutput);
+			// utterThis.lang = 'en-US';
+			utterThis.lang = 'ar';
+			synth.speak(utterThis);
 			return translatedOutput; // Console log return
 
 		}
