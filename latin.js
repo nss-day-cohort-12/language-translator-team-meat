@@ -35,7 +35,7 @@ var Translator = (function() {
 
 	return {
 		// Publicly accessible translator function for global "text" input variable
-		getLatin: function(textArr) {
+		translateToLatin: function(textArr) {
 			// New array for pushing translated content into
 			var translatedArr = [];
 			console.log("getLatin test");
@@ -43,8 +43,6 @@ var Translator = (function() {
 			// for (var i = 0; i < separated.length; i++) {
 			// 	// Note using the separated string as the bracket notated property value of lexicon
 			// 	if (lexicon[separated[i]] !== undefined) {
-			// 		console.log("separated[" + i + "]: ", separated[i]);
-			// 		console.log("lexicon[" + i + "]: ", lexicon[separated[i]]);
 			// 		separated[i] = lexicon[separated[i]];
 			// 	}
 			// }
@@ -53,8 +51,6 @@ var Translator = (function() {
 
 			// separated.forEach(function(element){
 			// 	if (lexicon[element] !== undefined) {
-			// 		console.log("element: ", element);
-			// 		console.log("lexicon[element]: ", lexicon[element]);
 			// 		element = lexicon[element];
 			// 	}
 			// });
@@ -66,7 +62,7 @@ var Translator = (function() {
 					// instead of altering element as in the for loop and forEach, map requires a "return" statement to alter each element
 					return lexicon[element];
 				}
-			}).join(" "); // stealth join method at the end ;D
+			}).join(" "); // join chained at the end instead of defining another variable
 			console.log(translatedOutput);
 
 			// Declare translatedOutput for above for loop and forEach options (need join variable)
