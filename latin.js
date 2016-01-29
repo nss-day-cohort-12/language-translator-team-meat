@@ -1,27 +1,9 @@
 var text = "";
 var container = document.getElementById('container');
-// Event listener to button
-
-// for (var i = 0; i < separated.length; i++) {
-// 	if (separated[i] === lexicon.propertyname)
-// 		separated[i] = lexicon.value
-// }
-
-// Latin IIFE Start
 	
 
+// IIFE Start
 var Translator = (function() {
-	// // Array that will hold the separate words of the user-submitted string
-	// var separated = [];	
-	// button.addEventListener("click", function(){
-	// 	// store the user's input string into a variable
-	// 	text = userInput.value;
-	// 	console.log("user text: ", text);
-	// 	// Declare a new array for the space-delimited strings of the initial user input, all set to lower case
-	// 	separated = text.toLowerCase().split(" ");
-	// 	console.log("separated: ", separated);
-	// });
-
 
 	var lexicon = {
 		"merry": "epulari",
@@ -39,42 +21,17 @@ var Translator = (function() {
 			// New array for pushing translated content into
 			var translatedArr = [];
 			console.log("getLatin test");
-			// Loop through the separated array and search for a corresponding property name within the lexicon object
-			// for (var i = 0; i < separated.length; i++) {
-			// 	// Note using the separated string as the bracket notated property value of lexicon
-			// 	if (lexicon[separated[i]] !== undefined) {
-			// 		separated[i] = lexicon[separated[i]];
-			// 	}
-			// }
-
-			// forEach variation of the above For loop
-
-			// separated.forEach(function(element){
-			// 	if (lexicon[element] !== undefined) {
-			// 		element = lexicon[element];
-			// 	}
-			// });
-
+			
+			// using "map" method option (probably best option here since map moves returned objects into a new array) 
 			var translatedOutput = textArr.map(function(element){
 				if (lexicon[element] !== undefined) {
-					console.log("element: ", element);
-					console.log("lexicon[element]: ", lexicon[element]);
-					// instead of altering element as in the for loop and forEach, map requires a "return" statement to alter each element
+					// instead of altering element as in the for loop and forEach, map requires a "return" statement to alter and push each element into the new array translatedOutput
 					return lexicon[element];
 				}
 			}).join(" "); // join chained at the end instead of defining another variable
-			console.log(translatedOutput);
 
-			// Declare translatedOutput for above for loop and forEach options (need join variable)
-			// var translatedOutput = textArr.join(" ");
-
-			container.innerHTML = `<p>Latin Translation:</p><p>${translatedOutput}</p>`;
-			var synth = window.speechSynthesis;
-			var utterThis = new SpeechSynthesisUtterance(translatedOutput);
-			// utterThis.lang = 'en-US';
-			utterThis.lang = 'ar';
-			synth.speak(utterThis);
-			return translatedOutput; // Console log return
+			
+			return translatedOutput;
 
 		}
 	}
